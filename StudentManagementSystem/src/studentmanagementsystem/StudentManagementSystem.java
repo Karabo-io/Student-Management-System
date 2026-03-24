@@ -6,6 +6,9 @@ package studentmanagementsystem;
 
 import java.util.Scanner;
 
+import Exceptions.AgeException;
+import Exceptions.AgeValidatorException;
+
 /**
  *
  * @author Karabo
@@ -17,9 +20,7 @@ public class StudentManagementSystem {
      */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        AgeValidatorException validator = new AgeValidatorException();
-        
- 
+  
         //Instantiate an array object
         StudentManager manager = new StudentManager();
         
@@ -58,7 +59,7 @@ public class StudentManagementSystem {
                         try {                         
                             System.out.print("Enter Age: ");
                             age = scan.nextInt();
-                            validator.validateAge(age);
+                            AgeValidatorException.validateAge(age);
                     
                         } catch (AgeException e) {
                             System.out.println("Error: " + e.getMessage());
